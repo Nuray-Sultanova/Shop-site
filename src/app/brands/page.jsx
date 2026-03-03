@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import MiniLogin from "../Components/MiniLogin/page";
-// Əgər MiniLogin hazırlamısansa onu bura import et:
-// import MiniLogin from "../Components/MiniLogin";
+;
 
 const Brands = () => {
   const brands = [
