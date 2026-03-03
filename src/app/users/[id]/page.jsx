@@ -18,7 +18,7 @@ const UserDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // ID-yə görə tək bir istifadəçini çəkirik
+    
     axios
       .get(`https://dummyjson.com/users/${id}`)
       .then((res) => {
@@ -52,7 +52,7 @@ const UserDetails = () => {
         </button>
 
         {/* Əsas Profil Kartı */}
-        <div className="bg-white rounded-[32px] shadow-sm border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-4xl shadow-sm border border-gray-100 overflow-hidden">
           {/* Üst rəngli hissə (Banner əvəzi) */}
           <div className="h-32 bg-[#F0EEED]"></div>
 
@@ -120,7 +120,7 @@ const UserDetails = () => {
                 </div>
               </div>
 
-              {/* Yaş/Doğum Günü Blok */}
+              {/* Yaş Blok */}
               <div className="bg-[#F9F9F9] p-5 rounded-2xl flex items-center gap-4">
                 <div className="bg-white p-3 rounded-xl shadow-sm">
                   <Calendar size={20} />
