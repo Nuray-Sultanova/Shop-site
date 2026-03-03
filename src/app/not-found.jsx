@@ -31,7 +31,6 @@ const NotFound = () => {
         Go Back Home
       </Link>
 
-      {/* Dekorativ line */}
       <div className="mt-12 w-40 h-1 bg-gray-600 rounded-full animate-pulse"></div>
     </div>
   );

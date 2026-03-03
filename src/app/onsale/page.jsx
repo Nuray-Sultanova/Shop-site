@@ -8,7 +8,7 @@ const OnSale = () => {
     {
       id: 1,
       name: "Vertical Striped Shirt",
-      image: "/t-shirt.png", // Öz şəkil yollarını bura yaz
+      image: "/t-shirt.png", 
       currentPrice: 212,
       originalPrice: 235,
       discount: "-20%",

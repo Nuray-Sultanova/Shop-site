@@ -3,9 +3,8 @@ import Shop from "./Components/Buttons/Shop";
 import DivisionBar from "./Components/DivisionBar";
 import Arrivals from "./Components/Sections/Arrivals";
 import TopSelling from "./Components/Sections/TopSelling";
-import Footer from "./Components/Footer";
 import MiniLogin from "./Components/MiniLogin/page";
-// className="px-30 bg-[#F2F0F1] relative py-20"
+
 const Home = () => {
   return (
     <div>
@@ -47,14 +46,10 @@ const Home = () => {
         </div>
       </div>
       <DivisionBar />
-
-      {/* Arrivalss hissesi buradadir */}
       <Arrivals />
       <TopSelling />
-  <MiniLogin/>
-
+      <MiniLogin />
     </div>
   );
 };
-//  <p>FIND CLOTHES THAT MATCHES YOUR STYLE</p>
 export default Home;

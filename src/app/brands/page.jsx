@@ -54,7 +54,6 @@ const Brands = () => {
       {/* Call to Action Bölməsi */}
       <div className="max-w-7xl mx-auto px-4 mb-32">
         <div className="relative overflow-hidden bg-black rounded-[40px] py-16 md:py-24 px-10 text-center text-white">
-          {/* Arxa fon üçün dekorativ dairə (opsional) */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
           
           <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter">
