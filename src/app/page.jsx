@@ -11,6 +11,7 @@ const Home = () => {
       <div className="px-6 lg:px-30 bg-[#F2F0F1] relative py-10 lg:py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center">
+            
             <div className="z-10 w-full lg:w-1/2">
               <h2 className="font-extrabold text-4xl lg:text-6xl leading-tight">
                 FIND CLOTHES THAT MATCHES YOUR STYLE
@@ -21,7 +22,7 @@ const Home = () => {
                 garments, designed to bring out your individuality and cater to
                 your sense of style.
               </p>
-
+              
               <div className="w-full sm:w-max">
                 <Shop />
               </div>
@@ -29,30 +30,25 @@ const Home = () => {
               <div className="grid grid-cols-2 lg:flex mt-10 lg:mt-20 gap-6 lg:gap-20">
                 <div>
                   <p className="font-extrabold text-2xl lg:text-4xl">200+</p>
-                  <p className="text-xs lg:text-sm text-gray-700">
-                    International Brands
-                  </p>
+                  <p className="text-xs lg:text-sm text-gray-700">International Brands</p>
                 </div>
                 <div>
                   <p className="font-extrabold text-2xl lg:text-4xl">2,000+</p>
-                  <p className="text-xs lg:text-sm text-gray-700">
-                    High-Quality Products
-                  </p>
+                  <p className="text-xs lg:text-sm text-gray-700">High-Quality Products</p>
                 </div>
                 <div className="col-span-2 lg:col-span-1">
                   <p className="font-extrabold text-2xl lg:text-4xl">30,000+</p>
-                  <p className="text-xs lg:text-sm text-gray-700">
-                    Happy Customers
-                  </p>
+                  <p className="text-xs lg:text-sm text-gray-700">Happy Customers</p>
                 </div>
               </div>
             </div>
 
-            <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0">
+            <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0 lg:h-150">
+    
               <img
                 src="/img1.png"
                 alt="Banner"
-                className="w-full h-auto object-cover lg:absolute lg:right-0 lg:bottom-20"
+                className="w-full h-auto object-cover lg:max-w-none lg:absolute lg:right-6 lg:bottom-20"
               />
             </div>
           </div>
