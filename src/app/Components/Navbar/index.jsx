@@ -16,7 +16,7 @@ const Navbar = () => {
             <Link href={"/onsale"}>On Sale</Link>
             <Link href={"/newarrivals"}>New Arrivals</Link>
             <Link href={"/brands"}>Brands</Link>
-            <Link href={"/users"}>Users</Link>
+            <Link href={"/users"}>Workers</Link>
           </div>
           <div className="relative">
             <div className="absolute  pl-2 pt-2 items-center ">
