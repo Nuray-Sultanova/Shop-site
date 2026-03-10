@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 import Shop from "./Components/Buttons/Shop";
 import DivisionBar from "./Components/DivisionBar";
 import Arrivals from "./Components/Sections/Arrivals";
@@ -43,12 +44,14 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0 lg:h-150">
-    
-              <img
+            <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0 h-100 lg:h-150">
+              <Image
                 src="/img1.png"
-                alt="Banner"
-                className="w-full h-auto object-cover lg:max-w-none lg:absolute lg:right-6 lg:bottom-20"
+                alt="Fashion Banner"
+                fill
+                className="object-contain lg:object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw" 
               />
             </div>
           </div>

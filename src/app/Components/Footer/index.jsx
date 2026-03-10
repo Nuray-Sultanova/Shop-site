@@ -51,7 +51,7 @@ const Footer = () => {
             <h2 className="font-black text-3xl mb-4 tracking-tighter italic text-black">
               SHOP.CO
             </h2>
-            <p className="text-gray-600 mb-6 text-sm leading-relaxed max-w-[250px]">
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed max-w-62.5">
               We have clothes that suits your style and help you to build your
               own unique personality.
             </p>

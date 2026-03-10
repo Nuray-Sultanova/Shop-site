@@ -22,7 +22,8 @@ const Brands = () => {
             Our Brands
           </h1>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm sm:text-base md:text-xl font-medium">
-            The world's most iconic fashion houses and labels, all in one place.
+            {/* Dırnaq xətası burada düzəldildi */}
+            The world&apos;s most iconic fashion houses and labels, all in one place.
             Curated style for the modern individual.
           </p>
         </div>
@@ -54,7 +55,8 @@ const Brands = () => {
           <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 bg-white/5 rounded-full -mr-16 -mt-16 md:-mr-32 md:-mt-32"></div>
 
           <h2 className="text-3xl md:text-6xl font-black mb-6 md:mb-8 uppercase italic tracking-tighter leading-tight">
-            Don't miss out <br className="hidden sm:block" /> on new arrivals
+            {/* Dırnaq xətası burada düzəldildi */}
+            Don&apos;t miss out <br className="hidden sm:block" /> on new arrivals
           </h2>
           <p className="text-gray-400 mb-8 md:mb-10 max-w-xl mx-auto text-sm md:text-lg">
             Be the first to know about new collections and exclusive

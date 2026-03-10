@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image"; 
 import { Trash2, Minus, Plus, Loader2 } from "lucide-react";
 
 const Shop = () => {
@@ -41,11 +42,13 @@ const Shop = () => {
                 key={item.id}
                 className="flex gap-4 md:gap-6 border-b border-gray-100 pb-6 last:border-none last:pb-0"
               >
-                <div className="w-28 h-28 md:w-32 md:h-32 bg-[#F0EEED] rounded-[15px] p-4 flex items-center justify-center shrink-0">
-                  <img
+                <div className="relative w-28 h-28 md:w-32 md:h-32 bg-[#F0EEED] rounded-[15px] p-4 flex items-center justify-center shrink-0 overflow-hidden">
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className="max-h-full object-contain mix-blend-multiply"
+                    fill
+                    className="object-contain p-2 mix-blend-multiply"
+                    sizes="(max-width: 768px) 112px, 128px" 
                   />
                 </div>
 
@@ -71,7 +74,6 @@ const Shop = () => {
                   <div className="flex justify-between items-end">
                     <span className="text-2xl font-black">${item.price}</span>
 
-                    {/* Say Tənzimləyicisi */}
                     <div className="flex items-center gap-4 bg-[#F0F0F0] px-4 py-2 rounded-full">
                       <button className="cursor-pointer hover:opacity-50">
                         <Minus size={16} />
@@ -87,7 +89,6 @@ const Shop = () => {
             ))}
           </div>
 
-          {/* SAĞ TƏRƏF: ORDER SUMMARY */}
           <div className="w-full lg:w-112.5">
             <div className="border border-gray-200 rounded-[20px] p-6 sticky top-5">
               <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
@@ -104,21 +105,27 @@ const Shop = () => {
                 </div>
                 <div className="flex justify-between text-red-500">
                   <p>Discount (-20%)</p>
-                  <p className="font-bold">-$113</p>
+                  <p className="font-bold">
+                    -${(products.reduce((acc, curr) => acc + curr.price, 0) * 0.2).toFixed(2)}
+                  </p>
                 </div>
                 <div className="flex justify-between">
                   <p>Delivery Fee</p>
-                  <p className="font-bold text-black">$15</p>
+                  <p className="font-bold text-black">$15.00</p>
                 </div>
 
                 <hr className="border-gray-100" />
 
                 <div className="flex justify-between text-xl font-bold text-black pt-2">
                   <p>Total</p>
-                  <p>$467</p>
+                  <p>
+                    $
+                    {(
+                      products.reduce((acc, curr) => acc + curr.price, 0) * 0.8 + 15
+                    ).toFixed(2)}
+                  </p>
                 </div>
 
-                {/* Promo Input */}
                 <div className="flex gap-3 pt-4">
                   <input
                     className="flex-1 bg-[#F0F0F0] border-none rounded-full py-3 px-5 outline-none focus:ring-1 ring-gray-300 transition-all text-sm"

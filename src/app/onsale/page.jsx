@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { ShoppingCart, Heart } from "lucide-react";
+import Image from "next/image";
 
 const OnSale = () => {
   const saleProducts = [
@@ -51,7 +52,7 @@ const OnSale = () => {
             On Sale
           </h2>
           <p className="text-gray-500 mt-3 text-sm md:text-base">
-            Big deals on our most-loved items! Don't miss out.
+            Big deals on our most-loved items! {"Don't"} miss out.
           </p>
         </div>
         <button className="hidden md:block border-b-2 border-black font-bold uppercase pb-1 hover:text-red-600 hover:border-red-600 transition-all text-sm">
@@ -64,20 +65,21 @@ const OnSale = () => {
         {saleProducts.map((product) => (
           <div key={product.id} className="group cursor-pointer">
             {/* Image Container */}
-            <div className="relative  sm:aspect-square bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-6 sm:p-8">
-              <img
+            <div className="relative aspect-square bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center">
+              <Image
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                fill
+                className="object-contain p-6 sm:p-8 group-hover:scale-105 transition-transform duration-500"
               />
               
               {/* Badge */}
-              <span className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase">
+              <span className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase z-10">
                 {product.discount}
               </span>
 
-              {/* Hover Actions (Hidden on Mobile for better UX) */}
-              <div className="hidden lg:flex absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-3">
+              {/* Hover Actions */}
+              <div className="hidden lg:flex absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-3 z-20">
                 <button className="bg-white p-3 rounded-full shadow-md hover:bg-black hover:text-white transition-all transform hover:-translate-y-1">
                   <ShoppingCart size={20} />
                 </button>
@@ -93,7 +95,6 @@ const OnSale = () => {
                 {product.name}
               </h3>
               
-              {/* Rating */}
               <div className="flex items-center gap-1 mt-1">
                 <div className="flex text-yellow-400 text-sm">
                   {"★".repeat(Math.floor(product.rating))}
@@ -103,7 +104,6 @@ const OnSale = () => {
                 </span>
               </div>
 
-              {/* Pricing */}
               <div className="flex items-center flex-wrap gap-2 md:gap-3 mt-2">
                 <span className="text-xl md:text-2xl font-black text-black">
                   ${product.currentPrice}
