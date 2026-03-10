@@ -3,7 +3,6 @@ import React from "react";
 import { ShoppingCart, Heart } from "lucide-react";
 
 const OnSale = () => {
-  // Endirimdə olan məhsulların siyahısı
   const saleProducts = [
     {
       id: 1,
@@ -44,65 +43,75 @@ const OnSale = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-10 lg:px-20 bg-white">
-      {/* Başlıq hissəsi */}
-      <div className="flex justify-between items-end mb-10">
+    <section className="py-12 md:py-16 px-6 md:px-10 lg:px-20 bg-white">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
         <div>
-          <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">
+          <h2 className="text-3xl md:text-5xl font-black uppercase italic tracking-tighter leading-none">
             On Sale
           </h2>
-          <p className="text-gray-500 mt-2">Ən çox bəyənilən məhsullarda böyük fürsətlər!</p>
+          <p className="text-gray-500 mt-3 text-sm md:text-base">
+            Big deals on our most-loved items! Don't miss out.
+          </p>
         </div>
-        <button className="hidden md:block border-b-2 border-black font-bold uppercase pb-1 hover:text-red-600 hover:border-red-600 transition-all">
+        <button className="hidden md:block border-b-2 border-black font-bold uppercase pb-1 hover:text-red-600 hover:border-red-600 transition-all text-sm">
           View All
         </button>
       </div>
 
-      {/* Məhsul Grid-i */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {saleProducts.map((product) => (
-          <div key={product.id} className="group relative">
-            {/* Məhsul Şəkli */}
-            <div className="relative aspect-square bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-8">
+          <div key={product.id} className="group cursor-pointer">
+            {/* Image Container */}
+            <div className="relative  sm:aspect-square bg-[#F0EEED] rounded-[20px] overflow-hidden flex items-center justify-center p-6 sm:p-8">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
               
-              {/* Endirim Etiketi */}
-              <span className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+              {/* Badge */}
+              <span className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase">
                 {product.discount}
               </span>
 
-              {/* Hover olanda çıxan sürətli düymələr */}
-              <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
-                <button className="bg-white p-3 rounded-full shadow-lg hover:bg-black hover:text-white transition-all">
+              {/* Hover Actions (Hidden on Mobile for better UX) */}
+              <div className="hidden lg:flex absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-3">
+                <button className="bg-white p-3 rounded-full shadow-md hover:bg-black hover:text-white transition-all transform hover:-translate-y-1">
                   <ShoppingCart size={20} />
                 </button>
-                <button className="bg-white p-3 rounded-full shadow-lg hover:bg-red-500 hover:text-white transition-all">
+                <button className="bg-white p-3 rounded-full shadow-md hover:bg-red-500 hover:text-white transition-all transform hover:-translate-y-1">
                   <Heart size={20} />
                 </button>
               </div>
             </div>
 
-            {/* Məhsul Məlumatları */}
+            {/* Product Details */}
             <div className="mt-4">
-              <h3 className="font-bold text-lg md:text-xl truncate">{product.name}</h3>
+              <h3 className="font-bold text-base md:text-lg lg:text-xl truncate text-black">
+                {product.name}
+              </h3>
               
-              {/* Reytinq (Sadə formada) */}
-              <div className="flex items-center gap-1 mt-1 text-yellow-500">
-                {"★".repeat(Math.floor(product.rating))}
-                <span className="text-gray-400 text-sm ml-1 font-medium">{product.rating}/5</span>
+              {/* Rating */}
+              <div className="flex items-center gap-1 mt-1">
+                <div className="flex text-yellow-400 text-sm">
+                  {"★".repeat(Math.floor(product.rating))}
+                </div>
+                <span className="text-gray-400 text-xs md:text-sm font-medium">
+                  {product.rating}/<span className="opacity-70">5</span>
+                </span>
               </div>
 
-              {/* Qiymətlər */}
-              <div className="flex items-center gap-3 mt-2">
-                <span className="text-2xl font-black">${product.currentPrice}</span>
-                <span className="text-gray-400 line-through text-xl font-medium">
+              {/* Pricing */}
+              <div className="flex items-center flex-wrap gap-2 md:gap-3 mt-2">
+                <span className="text-xl md:text-2xl font-black text-black">
+                  ${product.currentPrice}
+                </span>
+                <span className="text-gray-400 line-through text-base md:text-xl font-medium">
                   ${product.originalPrice}
                 </span>
-                <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-bold italic">
+                <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-[10px] md:text-xs font-bold">
                   {product.discount}
                 </span>
               </div>
@@ -111,9 +120,9 @@ const OnSale = () => {
         ))}
       </div>
 
-      {/* Mobil üçün "View All" düyməsi */}
+      {/* Mobile View All Button */}
       <div className="mt-10 md:hidden">
-        <button className="w-full border-2 border-gray-200 py-4 rounded-full font-bold uppercase">
+        <button className="w-full border-2 border-gray-200 py-4 rounded-full font-bold uppercase text-sm active:bg-black active:text-white transition-colors">
           View All
         </button>
       </div>

@@ -15,7 +15,7 @@ const NotFound = () => {
         Oops! Page Not Found
       </h2>
       
-      <p className="text-gray-400 mb-10 text-sm sm:text-base max-w-[300px] sm:max-w-md mx-auto">
+      <p className="text-gray-400 mb-10 text-sm sm:text-base max-w-75 sm:max-w-md mx-auto">
         The page you are looking for does not exist or has been moved.
       </p>
 
