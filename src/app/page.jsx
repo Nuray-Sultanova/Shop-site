@@ -8,43 +8,57 @@ import MiniLogin from "./Components/MiniLogin/page";
 const Home = () => {
   return (
     <div>
-      <div className="px-30 bg-[#F2F0F1] relative py-20">
-        <div>
-          <div>
-            <div>
-              <h2 className="w-150 font-extrabold text-6xl  ">
+      <div className="px-6 lg:px-30 bg-[#F2F0F1] relative py-10 lg:py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="z-10 w-full lg:w-1/2">
+              <h2 className="font-extrabold text-4xl lg:text-6xl leading-tight">
                 FIND CLOTHES THAT MATCHES YOUR STYLE
               </h2>
 
-              <p className=" w-150 font-light text-gray-700 py-10 ">
+              <p className="font-light text-gray-700 py-6 lg:py-10 text-sm lg:text-base max-w-125">
                 Browse through our diverse range of meticulously crafted
                 garments, designed to bring out your individuality and cater to
                 your sense of style.
               </p>
-              <Shop />
-              <div className="flex mt-20 gap-20 ">
+
+              <div className="w-full sm:w-max">
+                <Shop />
+              </div>
+
+              <div className="grid grid-cols-2 lg:flex mt-10 lg:mt-20 gap-6 lg:gap-20">
                 <div>
-                  <p className="font-extrabold text-4xl">200+</p>
-                  <p className=" text-gray-700">Internatioanl Brands</p>
+                  <p className="font-extrabold text-2xl lg:text-4xl">200+</p>
+                  <p className="text-xs lg:text-sm text-gray-700">
+                    International Brands
+                  </p>
                 </div>
                 <div>
-                  <p className="font-extrabold text-4xl">2,000+</p>
-                  <p className=" text-gray-700">High-Quality Products</p>
+                  <p className="font-extrabold text-2xl lg:text-4xl">2,000+</p>
+                  <p className="text-xs lg:text-sm text-gray-700">
+                    High-Quality Products
+                  </p>
                 </div>
-                <div>
-                  <p className="font-extrabold text-4xl">30,000+</p>
-                  <p className=" text-gray-700">Happy Customers</p>
+                <div className="col-span-2 lg:col-span-1">
+                  <p className="font-extrabold text-2xl lg:text-4xl">30,000+</p>
+                  <p className="text-xs lg:text-sm text-gray-700">
+                    Happy Customers
+                  </p>
                 </div>
               </div>
             </div>
-            <img
-              src="/img1.png "
-              alt=""
-              className=" absolute right-0 bottom-0"
-            />
+
+            <div className="relative w-full lg:w-1/2 mt-10 lg:mt-0">
+              <img
+                src="/img1.png"
+                alt="Banner"
+                className="w-full h-auto object-cover lg:absolute lg:right-0 lg:bottom-20"
+              />
+            </div>
           </div>
         </div>
       </div>
+
       <DivisionBar />
       <Arrivals />
       <TopSelling />
@@ -52,4 +66,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
